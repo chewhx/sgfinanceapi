@@ -1,14 +1,9 @@
-import { fib } from '../src/index';
+import { findBySymbol } from '../dist';
 
-const testConditions = [
-	[4, 3],
-	[10, 55],
-	[28, 317811],
-	[35, 9227465],
-];
+const testConditions = [['D05', 'DBS']];
 
 testConditions.forEach(([num, ans]) => {
 	test(`Fibonnaci number at position ${num}`, () => {
-		expect(fib(num)).toBe(ans);
+		expect(findBySymbol(num).name).toBe(ans);
 	});
 });
